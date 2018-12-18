@@ -1,12 +1,10 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
+# Name:        ENIGMA_MACHINE
+# Purpose:     Encryption
 #
-# Author:      BHANU
+# Author:      24Beast
 #
 # Created:     12-12-2018
-# Copyright:   (c) BHANU 2018
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 def main():
@@ -23,10 +21,12 @@ class Switch_Board:
         self.output=[]
 
     def set_board(self):
-        for i in range(0,26):
+        i=0
+        while(i<26):
             c=0
             print "CURRENT INPUT VALUE:",self.input[i],'\n'
-            v=raw_input("ENTER OUTPUT VALUE")
+            v=raw_input("ENTER OUTPUT VALUE:")
+            v=string.upper(v)
             for j in self.output:
                 if (j==v):
                     print "INPUT ALREADY USED"
@@ -35,6 +35,7 @@ class Switch_Board:
                 i=i-1
             else:
                 self.output.append(v)
+            i=i+1
 
     def convert(self,x):
         x=string.upper(x)
@@ -49,17 +50,20 @@ class Wheel:
         self.c=0
 
     def setinner(self):
-        for i in range(0,26):
+        i=0
+        while(i<26):
             print "CURRENT OUTER WHEEL VALUE:",self.outer[i],'\n'
             v=raw_input("ENTER INNER WHEEL VALUE FOR CURRENT OUTER WHEEL VALUE: \n")
+            v=string.upper(v)
             for j in self.inner:
                 if (j==v):
-                    print "INPUT ALREADY USED"
+                    print "INPUT ALREADY USED \n"
                     c=c+1
             if(c>0):
                 i=i-1
             else:
                 self.inner.append(v)
+            i=i+1
 
     def signal(self,x):
         y=string.upper(x)
@@ -137,7 +141,3 @@ class EnigmaMachine:
 Enigma=EnigmaMachine()
 Enigma.set_Machine()
 Enigma.execution()
-
-""" Notes:
-    Following are the wheel settings at http://enigmaco.de/enigma/enigma.html
-    Wheel1=[B,]"""
