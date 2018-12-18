@@ -5,3 +5,5 @@ The program has 3 major classes.
 1. Switch_Board-Used to scramble letters
 2. WHEELS-Used for encryption(includes reflector)
 3. Enigma_Machine- Final Machine with all components as class objects.
+
+Note:Need to create an option with a default setting of the machine.
